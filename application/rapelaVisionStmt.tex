@@ -13,8 +13,8 @@
 
 \section{Research Vision}
 
-My research motto is: \textit{Mathematics without biology or biology without
-mathematics are not as wonderful}.
+\textit{Mathematics without biology or biology without mathematics are not as
+wonderful}.
 
 Since pursuing my PhD, my research career has been highly interdisciplinary
 spanning analytical (e.g., mathematics, signal processing, statistics, machine
@@ -25,21 +25,13 @@ when I create a new method to process biological data, but I delight much
 further when I can apply this method to discover new aspects of brain function.
 
 My \emph{Statistical Neuroscience Research Group} will initially focus on
-creating advanced statistical methods to characterise neural and behavioral,
-offline and in real time, for short- and long-duration experiments. In
+creating advanced statistical methods to characterise neural and behavioral
+data, offline and in real time, for short- and long-duration experiments. In
 addition, in collaboration with experimental groups, we will apply these
 methods, or those created by others, to investigate behavioural and neural
 problems.
 
 \subsection{Latent variable models}
-
-My group will develop \textbf{interpretable probabilistic models for
-characterising behavioral and neural recordings, offline and in real time}, and
-\textbf{real-time probabilistic models for adaptive experimental control.}
-
-\subsubsection{Neural Latent Variables}
-
-\paragraph{Offline Inference}
 
 It is challenging to extract meaning from the large number of spikes generated
 by high-channel count recordings probes, e.g., Neuropixels. To address this
@@ -48,22 +40,22 @@ collaborators, created Gaussian Process Factor
 Analysis~\citep[GPFA][]{yuEtAl09}, a probabilistic method to extract
 low-dimensional representation (i.e., latent variables) from high-dimensional
 electrophysiological recordings. At the Unit I have distributed a Python
-implementation of an extension of GPFA, Sparse Variational Gaussian Process
+implementation of a recent extension of GPFA, Sparse Variational Gaussian Process
 Factor Analysis~\citep[svGPFA][]{dunckerAndSahani18}, which uses a sparse
-variational method, which significantly reduces the memory and time complexity
+variational method to substantially reduces the memory and time complexity
 for the estimation of GPFA models and, critically, allows point-process
 observations, eliminating the need of binning spikes. I have improved and
-optimized svGPFA, and used it to
+optimized svGPFA, and explored its capabilities to
 \href{https://joacorapela.github.io/svGPFA/auto_examples/index.html}{characterize
-neural recordings}.
+several neural datasets}.
 
 In collaboration with the laboratory of Marcus Stephenson-Jones at the SWC, I
 have extracted svGPFA neural latents from striatal Neuropixels recordings in
 mice performing a stereotyped poking sequence task~\citep{thompsonEtAl24}. I
 then used these neural latents as inputs to a Hidden Markov Model to decode,
 with impressive accuracy, the mice behavioral states. Critically, this is the
-first neural decoder that uses the spiking activity of the complete striatum
-and does not require the estimation of place fields.
+first position decoder that uses the spiking activity of whole populations
+and does not require the estimation of place fields of single units.
 
 We are now observing that patterns of neural latents observed during behavior
 replay during sleep periods. If these observations are confirmed, it will be
@@ -71,11 +63,81 @@ the first time that replay is identified using continuous latent variables of
 neural population activity, bypassing the estimation of place fields, which
 could open a new chapter in memory research.
 
-My group at NPP will extend svGPFA (e.g., we will allow svGPFA to accept
-external inputs) and will collaborate with experimental groups at NPP and CDB
-to investigate replay in the hippocampus.
+In collaboration with Prof.~Maneessh Sahani, my group will continue developing
+svGPFA and will collaborate with experimental groups at NPP and CDB to
+investigate the performance of svGPFA for position decoding and replay
+detection in the hippocampus.
 
-\paragraph{Online Inference}
+\subsection{Naturalistic, long-duration and continual experimentation}
+
+At the SWC and Gatsby Unit, we are pioneering a new type of naturalistic,
+long-duration and continual experimentation, the Aeon project, that will
+revolutionise neuroscience experimentation~\citep{campagnerEtAl25}. 
+
+In 2023-2024 I mentored a very talented undergraduate student from NPP,
+\href{https://zimoli02.github.io/}{Ms.~Zimo Li}, in a
+\href{https://www.simonsfoundation.org/2023/09/26/simons-foundation-announces-next-class-of-neuroscience-undergraduate-research-fellows/}{Simons
+Foundation SURFiN
+fellowship}, where she performed the first comprehensive statistical analysis
+of Aeon data.
+
+The achievements of Zimo were outstanding. She processed very complex data,
+that at that stage were poorly organised, and skillfully applied sophisticated
+statistical models (e.g., linear dynamical systems, hidden Markov models, point
+process regression) and produced the first statistical Aeon discoveries, which
+were included in the
+\href{https://www.biorxiv.org/content/10.1101/2025.07.31.664513v1}{Aeon
+platform paper}, with Zimo as coauthor. The collaboration with Zimo taught me
+that I can do excellent research with students that do not have a solid
+mathematical background.
+
+In collaboration with the Aeon team at the Gatsby Unit and SWC, my group will
+continue developing statistical methods for the analysis of Aeon data. Due to
+the large size of Aeon recordings, conventional batch machine learning (ML) methods
+cannot be used to process Aeon data. Aeon requires online methods able to
+process non-stationary data, and are computationally very efficient to handle
+very large datasets. A detailed description of our ML data
+processing plans for Aeon appear in a
+\href{https://www.gatsby.ucl.ac.uk/~rapela/npp/submittedProposal.pdf}{collaborative
+grant proposal between the Gatsby Unit and the Allen Institute for Neural
+Dynamics we submitted to BBSRC/NSF in 2024}.
+
+\subsection{Intelligent experimental control}
+
+Current neuroscience experimentation is mostly performed in open loop with
+predefined sets of rules designed by experimenters. More informative
+experiments can be designed if they could be controlled in close loop by
+intelligent inferences performed on behaviour and neural recordings.
+
+Bonsai is today the most widely used software for close loop experimental
+control. In 2022 I realised that adding ML functionality to
+Bonsai could make possible a radically new type of close loop intelligent
+experimentation, and lead the successful application of a BBSRC proposal
+(\href{https://gtr.ukri.org/projects?ref=BB\%2FW019132\%2F1}{BB/W019132/1}) to
+build the \href{https://bonsai-rx.org/machinelearning/}{Bonsai.ML package}.
+
+Most current ML methods operate offline, trained and performing inference on
+datasets previously recorded. However, Bonsai.ML requires a different type of ML
+methods, that are trained and perform inference on streams continuously
+delivering data in real time. We build this type of ML into Bonsai.ML. It now
+contains probabilistic ML methods for real time processing of behavioral (e.g.,
+kinematics inference with linear dynamical systems, behavioral state estimation
+with hidden Markov models) and neural data (neural latent variables inference
+with linear dynamical systems, hyppocampal position decoding and replay detection with a
+point process state-space model). Please refer to the
+\href{https://bonsai-rx.org/machinelearning/}{documentation of
+Bonsai.ML}.
+
+We are not integration large language models (LLMs) into Bonsai. First, we are
+using LLMs to help Bonsai users build correct and optimised workflows using
+natural language. Second, we are adding an LLM node to Bonsai to incroporate
+the large semantic knowledge of LLMs into the experimental controls loop.
+Please refer to the \href{https://github.com/joacorapela/os4ls}{Open Source for
+the Life Science proposal} we are currently preparing to fund these
+developments.
+
+My group will continue developing online probabilistic models to enable
+intelligent experimental control in Bonsai.
 
 \subsection{Collaborations}
 
