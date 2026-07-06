@@ -29,7 +29,7 @@ creating advanced statistical methods to characterise neural and behavioral
 data, offline and in real time, for short- and long-duration experiments. In
 addition, in collaboration with experimental groups, we will apply these
 methods, or those created by others, to investigate behavioural and neural
-problems.
+questions.
 
 \subsection{Latent variable models}
 
@@ -72,7 +72,7 @@ detection in the hippocampus.
 
 At the SWC and Gatsby Unit, we are pioneering a new type of naturalistic,
 long-duration and continual experimentation, the Aeon project, that will
-revolutionise neuroscience experimentation~\citep{campagnerEtAl25}. 
+revolutionise neuroscience experimentation~\citep{campagnerEtAl25b}. 
 
 In 2023-2024 I mentored a very talented undergraduate student from NPP,
 \href{https://zimoli02.github.io/}{Ms.~Zimo Li}, in a
@@ -137,13 +137,79 @@ the Life Science proposal} we are currently preparing to fund these
 developments.
 
 My group will continue developing online probabilistic models to enable
-intelligent experimental control in Bonsai.
+intelligent experimental control.
 
 \subsection{Collaborations}
 
+In 2019 the Gatsby Unit hired me to facilitate collaborations between the Unit
+and the SWC.
+%
+At the SWC experimental scientists collect rich and complex neural and
+behavioral datasets. Because often the don't have the analytical skills to best
+characterise these recordings, they end up using simple and sub optimal
+statistical techniques. I greatly enjoyed collaborating with SWC experimental
+scientists finding together good statistical tools to characterize their data.
+Below I describe three representative collaborations with the SWC.
+
+My first SWC collaboration started in the second floor SWC kitchen. There, Dr.~Sepi
+Keshavarsi, postdoctoral fellow in Troy Margrie's lab, told me about her
+experiments to test the integration of visual and vestibular information in
+mice. We initially used supervised linear
+\href{https://www.gatsby.ucl.ac.uk/~rapela/sepi/presentations/sepiTroyManeesh110619/sepiTroyManeesh110619.pdf}{Analysis
+of Covariance Models} and
+\href{https://www.gatsby.ucl.ac.uk/~rapela/sepi/reports/kfAnalysis/expt01/expt01Vestibular.pdf}{later
+unsupervised linear state-space models}. Hugo Soulat, a PhD student at the
+Gatsby Unit, continued this research, leading to a
+\href{https://proceedings.neurips.cc/paper_files/paper/2021/file/859b755563f548d008f936906a959c8f-Paper.pdf}{NeuroIPS
+publication}.
+
+To explore collaborative opportunities I used to attend the SWC Data Clubs,
+where SWC scientists presented their latest findings. In one data club Ms.~Mitra
+Javadzadeh presented her long-range cortical communications research where she
+was using Linear Discriminant Analysis to model this communication. I proposed
+her to use linear dynamical systems instead, as the dynamic characteristic of
+this model better suited her experimental setup. We pursued this
+characterisation, which yield novel insights, that
+\href{https://proceedings.neurips.cc/paper_files/paper/2021/file/859b755563f548d008f936906a959c8f-Paper.pdf}{Mitra
+presented orally at CoSyNe 2022}\footnote{Mitra's presentation starts at
+2:59:00}. Now, as faculty member at CSHL, Mitra continues this line of
+research~\citep{javadzadehEtAl24}.
+
+I am collaborating with Prof.~Marcus Stephenson Jones and Dr.~Emmett Thompson
+on several projects. As I mentioned in the begining, we are using svGPFA to
+decode positions and to detect replay using unbinned spikes. svGPFA is a
+smoothing method, and cannot be used in real time. To decode positin and detect
+replay online, we are using state-space models on spike counts, performing
+non-parametric analysis of LFPs, and using a
+\href{https://bonsai-rx.org/machinelearning/articles/PointProcessDecoder/ppd-overview.html}{Bayesian
+state-pace point-process decoder implemented in Bonsai.ML}. The results of
+this collaboration are preliminary, but very exciting.
+
 \section{Teaching Vision}
 
+I am experienced teaching quantitative subjects to life sciences students.
+Please refer to the Teaching section of my CV.
+
+My teaching philosophy has been heavily influences by my postdoctoral mentor,
+Prof.~Wilson Truccolo, Brown University. It aligns closely with the style of
+\href{https://mark-kramer.github.io/Case-Studies-Python/intro.html}{Case
+Studies in Neural Data Analysis}, by Prof.~Mark Krammer, Boston University.
+
+I deliver lectures that are mathematically rigorous, but skip proofs from the
+main thread of content. These proofs are provided in appendices.  % I
+complement my lectures with many examples, most often in the form of computer
+code. These examples help students grasp the utility of the concepts I teach,
+even if they don't fully understand their mathematical underpinning.  % I
+design my lectures to be multidimensional, so that both naive and expert
+students can benefit from them.  % Please refer to the
+\href{https://github.com/joacorapela/gcnuBridging2023/blob/master/probability/lectures/2_foundations/foundations.pdf}{Foundations
+of probability  theory} lecture, that I delivered in the first edition of
+Gatsby Unit's Bridging Program in 2023, as an example of my teaching style.
+
+I am very enthusiastic about learning, and some of this enthusiasm transpires
+in my teaching.
+
 \bibliographystyle{apalike}
-\bibliography{latentVariableModels,replay}
+\bibliography{latentVariableModels,replay,longDurationExperimentation,other}
 
 \end{document}
