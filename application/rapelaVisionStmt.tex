@@ -9,20 +9,20 @@
 
 \begin{document}
 
-\maketitle
+% \maketitle
 
 \section{Research Vision}
 
 \textit{Mathematics without biology or biology without mathematics are not as
 wonderful}.
 
-Since pursuing my PhD, my research career has been highly interdisciplinary
-spanning analytical (e.g., mathematics, signal processing, statistics, machine
-learning, computer science) and neuroscience experimental (e.g., statistical
-analysis of responses of single cells, electrocorticography, Utah arrays,
-Neuropixels recordings, close-loop experimental control) subjects. I delight
-when I create a new method to process biological data, but I delight much
-further when I can apply this method to discover new aspects of brain function.
+% Since pursuing my PhD, my research career has been deeply interdisciplinary
+% spanning analytical (e.g., mathematics, signal processing, statistics, machine
+% learning, computer science) and experimental neuroscience subjects (e.g.,
+% statistical analysis of responses of single cells, electrocorticography, Utah
+% arrays, Neuropixels recordings, close-loop experimental control). I delight
+% when I create a new method to process biological data, but I delight further
+% when I can apply it to discover new aspects of brain function.
 
 My \emph{Statistical Neuroscience Research Group} will initially focus on
 creating advanced statistical methods to characterise neural and behavioral
@@ -30,48 +30,68 @@ data, offline and in real time, for short- and long-duration experiments. In
 addition, in collaboration with experimental groups, we will apply these
 methods, or those created by others, to investigate behavioural and neural
 questions.
+%
+% The research line that my group will follow best aligns with those of
+% \href{https://sites.stat.columbia.edu/liam/}{Prof.~Liam Paninski} and
+% \href{https://pillowlab.princeton.edu/}{Prof.~Jonathan Pillow}.
+
+This is an exciting time to work on statistical neuroscience. As the variety of
+neural datasets being recorded (e.g., high-channel electrophysiology, one- and
+two-photon calcium imaging, voltage imaging, EM, transcriptonics, connectomics)
+keeps increasing, and their size and complexity become larger and larger due to
+more naturalistic and longer experimentation, there is a critical need for
+statistical methods that can draw efficient inferences and extract meaning from
+these datasets.
+%
+In addition, as new optogenetic methods are developed to spatio-temporally
+manipulate neural activity, we need these inferences in real time, combined
+with methods from optimal control, to maximise the efficiency of these
+manipulations.
+%
+Yet, were are currently no seeing an increase in the number of scientists
+trained in both statistical machine learning and neurosciences required for the
+development of these methods.
+%
+My research group will attempt to reverse this trend.
 
 \subsection{Latent variable models}
 
 It is challenging to extract meaning from the large number of spikes generated
-by high-channel count recordings probes, e.g., Neuropixels. To address this
-problem, my supervisor at the Gatsby Unit, Prof.~Maneesh Sahani, and
-collaborators, created Gaussian Process Factor
-Analysis~\citep[GPFA][]{yuEtAl09}, a probabilistic method to extract
-low-dimensional representation (i.e., latent variables) from high-dimensional
-electrophysiological recordings. At the Unit I have distributed a Python
-implementation of a recent extension of GPFA, Sparse Variational Gaussian Process
-Factor Analysis~\citep[svGPFA][]{dunckerAndSahani18}, which uses a sparse
-variational method to substantially reduces the memory and time complexity
-for the estimation of GPFA models and, critically, allows point-process
-observations, eliminating the need of binning spikes. I have improved and
-optimized svGPFA, and explored its capabilities to
+by high-channel count recordings probes, like Neuropixels. To address this
+problem, my supervisor at the Gatsby Unit, Prof.~Maneesh Sahani, created
+Gaussian Process Factor Analysis~\citep[GPFA;][]{yuEtAl09}, a probabilistic
+method to extract low-dimensional representations (i.e., latent variables) from
+high-dimensional electrophysiological recordings, and recently extended it in
+Sparse Variational Gaussian Process Factor Analysis
+\citep[svGPFA;][]{dunckerAndSahani18}.
+%
+At the Unit I have distributed a highly optimized Python implementation of
+svGPFA and explored its capabilities to
 \href{https://joacorapela.github.io/svGPFA/auto_examples/index.html}{characterize
-several neural datasets}.
+several high-channel count neural datasets}.
 
 In collaboration with the laboratory of Marcus Stephenson-Jones at the SWC, I
 have extracted svGPFA neural latents from striatal Neuropixels recordings in
 mice performing a stereotyped poking sequence task~\citep{thompsonEtAl24}. I
-then used these neural latents as inputs to a Hidden Markov Model to decode,
-with impressive accuracy, the mice behavioral states. Critically, this is the
-first position decoder that uses the spiking activity of whole populations
-and does not require the estimation of place fields of single units.
-
-We are now observing that patterns of neural latents observed during behavior
-replay during sleep periods. If these observations are confirmed, it will be
-the first time that replay is identified using continuous latent variables of
-neural population activity, bypassing the estimation of place fields, which
-could open a new chapter in memory research.
+then used these neural latents as inputs to a Hidden Markov Model to decode
+mice behavioral states with very high accuracy. We are now observing that
+patterns of neural latents detected during behavior replay during sleep.
+Similar decoding and replay are obtained using latent variables estimated using
+linear dynamical systems, instead of svGPFA.
+%
+If this observations are confirmed, it will be the first time that accurate
+decoding is achieved and replay is detected in continuous latent variables of
+large neural populations, bypassing the estimation of place fields.
 
 In collaboration with Prof.~Maneessh Sahani, my group will continue developing
-svGPFA and will collaborate with experimental groups at NPP and CDB to
-investigate the performance of svGPFA for position decoding and replay
+svGPFA and will collaborate with experimental groups at NPP and CDB to explore
+the potential of latent variable models for position decoding and replay
 detection in the hippocampus.
 
 \subsection{Naturalistic, long-duration and continual experimentation}
 
 At the SWC and Gatsby Unit, we are pioneering a new type of naturalistic,
-long-duration and continual experimentation, the Aeon project, that will
+long-duration and continual experimentation, the Aeon platform, that will
 revolutionise neuroscience experimentation~\citep{campagnerEtAl25b}. 
 
 In 2023-2024 I mentored a very talented undergraduate student from NPP,
@@ -80,7 +100,7 @@ In 2023-2024 I mentored a very talented undergraduate student from NPP,
 Foundation SURFiN
 fellowship}, where she performed the first comprehensive statistical analysis
 of Aeon data.
-
+%
 The achievements of Zimo were outstanding. She processed very complex data,
 that at that stage were poorly organised, and skillfully applied sophisticated
 statistical models (e.g., linear dynamical systems, hidden Markov models, point
@@ -93,32 +113,33 @@ mathematical background.
 
 In collaboration with the Aeon team at the Gatsby Unit and SWC, my group will
 continue developing statistical methods for the analysis of Aeon data. Due to
-the large size of Aeon recordings, conventional batch machine learning (ML) methods
-cannot be used to process Aeon data. Aeon requires online methods able to
-process non-stationary data, and are computationally very efficient to handle
-very large datasets. A detailed description of our ML data
-processing plans for Aeon appear in a
+the large size of Aeon recordings, conventional batch machine learning (ML)
+methods cannot be used to process Aeon data. Aeon requires online methods able
+to process non-stationary data, and are computationally very efficient to
+handle very large datasets. A detailed description of my ML data processing
+plans for Aeon data appears in a
 \href{https://www.gatsby.ucl.ac.uk/~rapela/npp/submittedProposal.pdf}{collaborative
-grant proposal between the Gatsby Unit and the Allen Institute for Neural
-Dynamics we submitted to BBSRC/NSF in 2024}.
+BBSRC/NFS grant we submitted jointly with the Allen Institute for Neural
+Dynamics in 2024}.
 
 \subsection{Intelligent experimental control}
 
 Current neuroscience experimentation is mostly performed in open loop with
 predefined sets of rules designed by experimenters. More informative
 experiments can be designed if they could be controlled in close loop by
-intelligent inferences performed on behaviour and neural recordings.
+intelligent inferences performed on behavioural and neural data streams.
 
-Bonsai is today the most widely used software for close loop experimental
-control. In 2022 I realised that adding ML functionality to
-Bonsai could make possible a radically new type of close loop intelligent
-experimentation, and lead the successful application of a BBSRC proposal
+\href{https://bonsai-rx.org/}{Bonsai} is today the most widely used software
+for close loop experimental control in neuroscience. In 2022 I realised that
+adding ML functionality to Bonsai could make possible a radically new type of
+close loop intelligent experimentation, and lead the successful application of
+a BBSRC proposal
 (\href{https://gtr.ukri.org/projects?ref=BB\%2FW019132\%2F1}{BB/W019132/1}) to
 build the \href{https://bonsai-rx.org/machinelearning/}{Bonsai.ML package}.
 
 Most current ML methods operate offline, trained and performing inference on
 datasets previously recorded. However, Bonsai.ML requires a different type of ML
-methods, that are trained and perform inference on streams continuously
+methods, which are trained and perform inference on live streams, continuously
 delivering data in real time. We build this type of ML into Bonsai.ML. It now
 contains probabilistic ML methods for real time processing of behavioral (e.g.,
 kinematics inference with linear dynamical systems, behavioral state estimation
@@ -128,16 +149,15 @@ point process state-space model). Please refer to the
 \href{https://bonsai-rx.org/machinelearning/}{documentation of
 Bonsai.ML}.
 
-We are not integration large language models (LLMs) into Bonsai. First, we are
-using LLMs to help Bonsai users build correct and optimised workflows using
-natural language. Second, we are adding an LLM node to Bonsai to incroporate
-the large semantic knowledge of LLMs into the experimental controls loop.
-Please refer to the \href{https://github.com/joacorapela/os4ls}{Open Source for
-the Life Science proposal} we are currently preparing to fund these
-developments.
+We are now integrating large language models (LLMs) into Bonsai. We are using
+them to help Bonsai users build correct and optimised workflows using natural
+language. Additionally, we are building a Bonsai LLM node to bring the large
+semantic knowledge of LLMs into the experimental controls loop.  Please refer
+to the \href{https://github.com/joacorapela/os4ls}{Open Source for the Life
+Science proposal} we are currently preparing to support these developments.
 
-My group will continue developing online probabilistic models to enable
-intelligent experimental control.
+My group will continue developing real-time probabilistic ML models to enable
+intelligent experimental control in Bonsai.
 
 \subsection{Collaborations}
 
@@ -149,7 +169,7 @@ behavioral datasets. Because often the don't have the analytical skills to best
 characterise these recordings, they end up using simple and sub optimal
 statistical techniques. I greatly enjoyed collaborating with SWC experimental
 scientists finding together good statistical tools to characterize their data.
-Below I describe three representative collaborations with the SWC.
+Below I highlight on of these collaborations.
 
 My first SWC collaboration started in the second floor SWC kitchen. There, Dr.~Sepi
 Keshavarsi, postdoctoral fellow in Troy Margrie's lab, told me about her
@@ -163,9 +183,10 @@ Gatsby Unit, continued this research, leading to a
 \href{https://proceedings.neurips.cc/paper_files/paper/2021/file/859b755563f548d008f936906a959c8f-Paper.pdf}{NeuroIPS
 publication}.
 
-To explore collaborative opportunities I used to attend the SWC Data Clubs,
-where SWC scientists presented their latest findings. In one data club Ms.~Mitra
-Javadzadeh presented her long-range cortical communications research where she
+To explore collaborative opportunities I attended the SWC Data Clubs, where SWC
+scientists presented their latest findings. In one data club Ms.~Mitra
+Javadzadeh, Ph.D.\ student in Prof.~Hofer's lab, presented her long-range
+cortical communications research, where she
 was using Linear Discriminant Analysis to model this communication. I proposed
 her to use linear dynamical systems instead, as the dynamic characteristic of
 this model better suited her experimental setup. We pursued this
@@ -184,6 +205,23 @@ non-parametric analysis of LFPs, and using a
 \href{https://bonsai-rx.org/machinelearning/articles/PointProcessDecoder/ppd-overview.html}{Bayesian
 state-pace point-process decoder implemented in Bonsai.ML}. The results of
 this collaboration are preliminary, but very exciting.
+
+I find the research of NPP and CDB very interesting and look forward to
+collaborate with their investigators on the use of statistical models
+to characterize their data. Specifically, at NPP I see opportunities for
+collaborations with the lab of Prof.~Bianco on methods to process calcium
+imaging data; with Prof.~Bush on methods to process hippocampal data (e.g.,
+decoding, forecasting and replay detection), on EEG
+data processing, and on methods for seizure detection and prediction; with
+Prof.~MacAskill on RL methods supporting context-dependent decision making and
+methods to process calcium imaging data;
+with Prof.~Ruediger on methods to characterize response properties of visual
+cells.
+%
+At CDB I see opportunities to collaborate with the groups of Prof.~Barry and
+Prof.~O'Keefe on methods to process hippocampal data; with Prof.~Baier on
+dynamical systems and epilepsy; with Prof.~Cohen on methods for real-time
+experimental control.
 
 \section{Teaching Vision}
 
@@ -206,9 +244,12 @@ students can benefit from them.  % Please refer to the
 of probability  theory} lecture, that I delivered in the first edition of
 Gatsby Unit's Bridging Program in 2023, as an example of my teaching style.
 
-I am very enthusiastic about learning, and some of this enthusiasm transpires
-in my teaching.
+I am very enthusiastic about learning, and from students feedback I learned
+that some of this enthusiasm transpires in my teaching.
 
+***Neuroscience needs more statistical neuroscientists.***
+
+\pagebreak
 \bibliographystyle{apalike}
 \bibliography{latentVariableModels,replay,longDurationExperimentation,other}
 
