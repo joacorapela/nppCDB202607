@@ -1,5 +1,14 @@
 *~
+*.swp
 *.bib
 application/rapelaVisionStmt.*
 !application/rapelaVisionStmt.tex
 !application/rapelaVisionStmt.pdf
+application/rapelaPersonSpecification.*
+!application/rapelaPersonSpecification.tex
+!application/rapelaPersonSpecification.pdf
+application/rapelaResume.*
+!application/rapelaResume.tex
+!application/rapelaResume.pdf
+application/rapelaVisionStmt_old.tex
+application/rapelaPersonSpecification_new.tex
