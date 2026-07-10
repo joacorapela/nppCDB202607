@@ -7,8 +7,8 @@ application/rapelaVisionStmt.*
 application/rapelaPersonSpecification.*
 !application/rapelaPersonSpecification.tex
 !application/rapelaPersonSpecification.pdf
-application/rapelaResume.*
-!application/rapelaResume.tex
-!application/rapelaResume.pdf
+application/rapelaCV.*
+!application/rapelaCV.tex
+!application/rapelaCV.pdf
 application/rapelaVisionStmt_old.tex
 application/rapelaPersonSpecification_new.tex
