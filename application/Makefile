@@ -1,4 +1,4 @@
-all: rapelaVisionStmt.pdf rapelaResume.pdf rapelaPersonSpecification.pdf
+all: rapelaVisionStmt.pdf rapelaCV.pdf rapelaPersonSpecification.pdf
 
 rapelaVisionStmt.pdf: rapelaVisionStmt.tex
 	pdflatex rapelaVisionStmt.tex
