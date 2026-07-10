@@ -1,6 +1,7 @@
 *~
 *.swp
 *.bib
+*.csh
 application/rapelaVisionStmt.*
 !application/rapelaVisionStmt.tex
 !application/rapelaVisionStmt.pdf
