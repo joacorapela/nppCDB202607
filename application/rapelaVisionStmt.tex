@@ -11,9 +11,7 @@
 
 % \maketitle
 
-\section*{Research Vision}
-
-\textit{Mathematics without biology or biology without mathematics are not as
+\hfill\textit{Mathematics without biology or biology without mathematics are not as
 wonderful}.
 
 % Since pursuing my PhD, my research career has been deeply interdisciplinary
@@ -66,30 +64,30 @@ GPFA~\citep[svGPFA;][]{dunckerAndSahani18} to bypass standard scalability
 limits. By utilizing sparse-variational approximations, svGPFA substantially
 reduces computational and memory bottlenecks, allowing it to successfully
 characterise much longer experimental trials than standard GPFA. Furthermore,
-its continuous-time point-process foundation allows it to model exact spike
-times, eliminating binning artifacts entirely.
+its continuous-time point-process observation model eliminates the need of
+binning spikes, and yields a fully continuous neural population model.
 
 At the Gatsby Unit, I developed and distributed a highly optimised
-\href{https://github.com/joacorapela/svGPFA}{Python implementation of svGPFA}
-to explore its capabilities and
-\href{https://joacorapela.github.io/svGPFA/auto_examples/index.html}{characterise
-several high-channel count neural datasets}.
+\href{https://github.com/joacorapela/svGPFA}{Python implementation of svGPFA}.
+To demonstrate the power of this method on complex, large-scale data, I used it
+to \href{https://joacorapela/svGPFA/auto_examples/index.html}{characterise
+several high-channel count neural datasets}. 
 %
-In collaboration with the
-Stephenson-Jones laboratory at the SWC, I applied this framework to striatal
+In collaboration with the Stephenson-Jones laboratory at the SWC, we identified
+a powerful validation of this framework. I applied svGPFA to striatal
 Neuropixels recordings from mice executing a stereotyped poking sequence
 task~\citep{thompsonEtAl24}. By feeding these neural latents into a Hidden
 Markov Model (HMM), I decoded distinct behavioural states with high fidelity.
+Crucially, we have now observed that these latent neural patterns actively
+replay during sleep. These population replay observations are robust and are
+not artifacts of svGPFA, as the same replay dynamics are consistently recovered
+when estimating latents using linear dynamical systems fitted to raw spike
+counts rather than point-process observations. 
 %
-We have now observed that these latent neural patterns actively replay during
-sleep. Notably, these population replay observations are not artifacts of
-svGPFA, as replay can also be observed in latents estimated by linear dynamical
-systems, fitted to spike counts, instead of point-process observations.
-%
-Once confirmed, these findings will represent the first time that accurate
-decoding and replay tracking have been achieved directly within the continuous
-latent space of large populations, bypassing the need to estimate explicit
-place fields.
+These findings demonstrate that accurate decoding and replay tracking can be
+achieved directly within the continuous latent space of large neural
+populations, completely bypassing the traditional requirement to estimate
+explicit place fields.
 
 My independent research group will continue developing advanced latent variable
 models for population recordings. We will collaborate closely with experimental
@@ -101,27 +99,26 @@ within hippocampal circuits.
 \paragraph{NeuroAI methods for naturalistic, long-duration and continual
 experimentation}
 
-At the SWC and Gatsby Unit, we are pioneering a new type of naturalistic,
-long-duration and continual experimentation, implemented in the
-\href{https://aeon.swc.ucl.ac.uk/}{Aeon platform}, that promises to
+At the SWC and Gatsby Unit we are pioneering a new type of naturalistic, 
+long-duration and continual experimentation, implemented in the 
+\href{https://aeon.swc.ucl.ac.uk/}{Aeon platform}, which is poised to 
 revolutionise neuroscience experimentation~\citep{campagnerEtAl25b}.
 
-In 2023-2024 I mentored a very talented undergraduate student from NPP,
-\href{https://zimoli02.github.io/}{Ms.~Zimo Li}, in a
-\href{https://www.simonsfoundation.org/2023/09/26/simons-foundation-announces-next-class-of-neuroscience-undergraduate-research-fellows/}{Simons
-Foundation SURFiN
-fellowship}, where she performed the first comprehensive statistical analysis
-of Aeon data.
-%
-The achievements of Zimo were outstanding. She processed very complex data,
-that at that stage were poorly organised, and skillfully applied sophisticated
-statistical models (e.g., linear dynamical systems, hidden Markov models, point
-process regression) and produced the first statistical Aeon discoveries, which
-were included in the
+In 2023--2024, I mentored an exceptional undergraduate student from NPP,
+\href{https://zimoli02.github.io/}{Ms.~Zimo Li}, through a
+\href{https://www.simonsfoundation.org/2023/09/26/simons-foundation-announces-next-class-of-neuroscience-undergraduate-research-fellows/}{Simons Foundation
+SURFiN fellowship}. Zimo performed the first comprehensive statistical analysis
+of Aeon data, an outstanding achievement given the high complexity and scale of
+the unstructured raw datasets at that stage. She skillfully applied
+sophisticated statistical frameworks---including linear dynamical systems,
+hidden Markov models, and point-process regression---to generate the first
+statistical discoveries from the Aeon platform. Her contributions earned her a
+co-authorship on the
 \href{https://www.biorxiv.org/content/10.1101/2025.07.31.664513v1}{Aeon
-platform paper}, with Zimo as coauthor. The collaboration with Zimo taught me
-that I can do excellent research with students that do not have a solid
-mathematical background.
+platform paper}. This highly successful
+collaboration demonstrated my capacity to effectively guide life-sciences
+students through advanced mathematical workflows, enabling them to produce
+rigorous, high-impact computational research.
 
 Due to the large size of Aeon recordings, conventional batch machine learning
 (ML) methods cannot be used to process Aeon data. Aeon requires online methods
@@ -131,7 +128,7 @@ processing plans for Aeon data appears in a
 \href{https://www.gatsby.ucl.ac.uk/~rapela/npp/submittedProposal.pdf}{collaborative
 BBSRC/NSF grant we submitted jointly with the Allen Institute for Neural
 Dynamics in 2024}.  My group will continue contributing advanced statistical
-methods for the characterisation of Aeon data offline and in real time..
+methods for the characterisation of Aeon data offline and in real time.
 
 \paragraph{NeuroAI methods for intelligent experimental control}
 
@@ -163,9 +160,11 @@ Bonsai.ML}.
 We are now integrating large language models (LLMs) into Bonsai. We are using
 them to help Bonsai users build correct and optimised workflows using natural
 language. Additionally, we are building a Bonsai LLM node to bring the large
-semantic knowledge of LLMs into the experimental controls loop.  Please refer
-to the \href{https://github.com/joacorapela/os4ls}{Open Source for the Life
-Science proposal} we are currently preparing to support these developments.
+semantic knowledge of LLMs into the experimental control loop.  Please refer to
+the
+\href{https://github.com/joacorapela/os4ls/blob/master/application/application.md}{Open
+Source for the Life Science proposal} we are currently preparing to support
+these developments.
 
 My group will continue developing real-time probabilistic ML models to enable
 intelligent experimental control in Bonsai.
@@ -173,7 +172,7 @@ intelligent experimental control in Bonsai.
 \paragraph{Collaborations} 
 
 In 2019, I was hired by the Gatsby Unit specifically to facilitate interactions
-between the Unit and the SWC by collaborating with SWC scientists on the use of
+between the Unit and the SWC, by collaborating with SWC scientists on the use of
 advanced statistical methods.
 %
 Below I describe the dynamics of one such collaboration.
@@ -203,28 +202,28 @@ goal is to establish a dedicated team of NeuroAI researchers who will deeply
 integrate with experimental laboratories to develop optimal, bespoke modeling
 frameworks for complex datasets.
 
-\section*{Teaching Vision}
+\paragraph{Teaching Vision}
 
-My teaching of quantitative subjects to life sciences students balances
-mathematical foundations with practical applications. This philosophy was
-shaped by my postdoctoral mentor, Prof.~Wilson Truccolo at Brown University,
-for whom I served as a teaching assistant in his graduate-level Statistical
-Neuroscience course. Wilson's lecture excellently combined foundational
-mathematical concepts and appealing neuroscience applications, often from his
-own research. I have integrated this balance into my own instructional
-strategy.
+My teaching of quantitative subjects to life-sciences students balances
+rigorous mathematical foundations with practical applications. This philosophy
+was shaped during my time at Brown University under the mentorship of Prof.
+Wilson Truccolo, for whom I served as a teaching assistant in his
+graduate-level Statistical Neuroscience course. Prof. Truccolo’s lectures
+masterfully combined foundational mathematical concepts with fascinating
+neuroscience applications, frequently drawing from his own research.  I have
+integrated this balance into my own instructional strategy, ensuring that
+mathematical concepts are anchored by biological relevance.
 
 I structure my lectures to be multidimensional, targeting both novices and
 advanced students. I maintain a streamlined narrative during class by moving
 mathematical proofs out of the main thread. However, I provide these proofs in
-comprehensive lecture appendices.
+appendices.
 %
-My lectures contain multiple hands-on computer exercises. By providing
-boilerplate code, I scaffold the learning process so students can
-perform advanced neural data analysis early on. This approach ensures that
-students experience the reward of mastering complex data workflows and
-understanding their utility, even as they are still digesting the underlying
-mathematical concepts.
+My lectures contain multiple examples, usually in the form of computer
+exercises. By providing boilerplate code, I help students perform advanced
+neural data analysis early on. This approach ensures that students experience
+the reward of mastering complex processing, even as they are still digesting
+the underlying mathematical concepts.
 
 I have successfully applied this methodology across several courses. For
 example, I designed the Probability module of the inaugural Gatsby Unit
@@ -243,12 +242,11 @@ cat primary visual cortex
 \citep{rapelaEtAl06}. Similarly, in a
 \href{https://github.com/joacorapela/neuroinformatics24/blob/master/worksheets/04_circularStats/worksheet_circularStatistics.pdf}{homework
 assignment on circular statistics}, I guided them to reproduce circular
-statistics and traveling wave detection figures from my articles on the
-appearance of traveling waves during the production of rhythmic speech
-\citep{rapelaInPrepTWsInSpeech,rapelaInPrepSyncTWs,rapelaInPrepSyncTWsII}.
+statistics and traveling wave detection figures from 
+\citet{rapelaInPrepTWsInSpeech,rapelaInPrepSyncTWs,rapelaInPrepSyncTWsII}.
 
-I am very enthusiastic about learning, and in students' feedback I found
-that some of this enthusiasm transpires in my teaching.
+I am passionate about the subjects I teach, and from student feedback I learned
+that this passion is reflected in my teaching.
 
 \pagebreak
 \bibliographystyle{apalike}
